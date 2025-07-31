@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptitude Test</title>
+</head>
+<body>
+    <h2>{{ question['question'] }}</h2>
+    <form method="post" action="{{ url_for('aptitude_test') }}">
+        {% for option in question['options'] %}
+            <input type="radio" name="option" value="{{ option }}" required>{{ option }}<br>
+        {% endfor %}
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>
